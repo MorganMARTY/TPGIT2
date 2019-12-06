@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Plongeur.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">FFSSM_Enonce</a> &gt; <a href="index.source.html" class="el_package">FFSSM</a> &gt; <span class="el_source">Plongeur.java</span></div><h1>Plongeur.java</h1><pre class="source lang-java linenums">package FFSSM;
+
+import java.util.Calendar;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Plongeur extends Personne{
+<span class="nc" id="L8">	private List&lt;Licence&gt; licences = new LinkedList&lt;&gt;();</span>
+	
+<span class="nc" id="L10">	private int niveau = 0;</span>
+	
+<span class="nc" id="L12">	private GroupeSanguin groupe = GroupeSanguin.APLUS;	</span>
+	
+	public Plongeur(String numeroINSEE, String nom, String prenom, String adresse, String telephone, Calendar naissance, Licence l) {
+<span class="nc" id="L15">		super(numeroINSEE, nom, prenom, adresse, telephone, naissance);</span>
+
+<span class="nc" id="L17">		licences.add(l);</span>
+<span class="nc" id="L18">	}	</span>
+	
+	public void ajouteLicence(Licence l) {
+<span class="nc bnc" id="L21" title="All 2 branches missed.">		if (null == l)</span>
+<span class="nc" id="L22">			throw new IllegalArgumentException(&quot;l is null&quot;);</span>
+<span class="nc" id="L23">		licences.add(l);		</span>
+<span class="nc" id="L24">	}</span>
+	
+	public Licence derniereLicence() {
+<span class="nc" id="L27">		return licences.get(licences.size() - 1);</span>
+	}
+
+	/**
+	 * Get the value of groupe
+	 *
+	 * @return the value of groupe
+	 */
+	public GroupeSanguin getGroupe() {
+<span class="nc" id="L36">		return groupe;</span>
+	}
+
+	/**
+	 * Set the value of groupe
+	 *
+	 * @param groupe new value of groupe
+	 */
+	public void setGroupe(GroupeSanguin groupe) {
+<span class="nc" id="L45">		this.groupe = groupe;</span>
+<span class="nc" id="L46">	}</span>
+
+
+	/**
+	 * Get the value of niveau
+	 *
+	 * @return the value of niveau
+	 */
+	public int getNiveau() {
+<span class="nc" id="L55">		return niveau;</span>
+	}
+
+	/**
+	 * Set the value of niveau
+	 *
+	 * @param niveau new value of niveau
+	 */
+	public void setNiveau(int niveau) {
+<span class="nc" id="L64">		this.niveau = niveau;</span>
+<span class="nc" id="L65">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
